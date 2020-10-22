@@ -66,11 +66,16 @@ def getInput(guessedLetters):
             print()
             continue
             
+        used = False
         for letter in guessedLetters:
-            if(userInput == letter):
+            if(userInput == letter.lower()):
                 print('ERROR: You already guessed that letter!')
                 print()
+                used = True
                 continue
+        
+        if(used):
+            continue
 
         return userInput
 
@@ -111,11 +116,11 @@ def gameLoop(wordInfo):
         updateScreen(guessedWord, guessedLetters, lives)
         playerInput = getInput(guessedLetters)
 
-        guessedLetters.append(playerInput)
-
         if (playerInput == 'exit'):
             break
-            
+
+        guessedLetters.append(playerInput.upper())
+
         isCorrect = checkInput(playerInput, word)
 
         if(isCorrect):
