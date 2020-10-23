@@ -2,10 +2,15 @@ from time import sleep
 import random
 from os import name, system
 
-def endScreen(word, guessedWord, guessedLetters):
+def endScreen(word, guessedWord, guessedLetters, hasWon):
     clearScreen()
 
     print('->->-> Hangman <-<-<-')
+    print()
+    if(hasWon):
+        print('GG You won! You truly are amazing!')
+    else:
+        print('GG You were so close! Better luck next time!')
     print()
     print('The word was: ' + word)
     
@@ -21,7 +26,6 @@ def endScreen(word, guessedWord, guessedLetters):
 
     print('--------------------')
     print()
-    input('Press enter to quit!')
 
 def checkWord(guessedWord):
     for char in guessedWord:
@@ -61,8 +65,8 @@ def getInput(guessedLetters):
         if (userInput == 'exit'):
             return userInput
         
-        if (len(userInput) > 1):
-            print('ERROR: That is not a valid character')
+        if (len(userInput) > 1 or len(userInput) < 1):
+            print('ERROR: That is not a valid character!')
             print()
             continue
             
@@ -111,6 +115,7 @@ def gameLoop(wordInfo):
     guessedWord = wordInfo[1]
     guessedLetters = []
     lives = 5
+    hasWon = False
 
     while True:
         updateScreen(guessedWord, guessedLetters, lives)
@@ -134,9 +139,10 @@ def gameLoop(wordInfo):
         isCompleted = checkWord(guessedWord)
 
         if(isCompleted):
+            hasWon = True
             break
     
-    endScreen(word, guessedWord, guessedLetters)
+    endScreen(word, guessedWord, guessedLetters, hasWon)
 
 def generateWord():
     words = ['ijs', 'koffie', 'olifant', 'huis', 'hoi', 'planeet', 'school']
@@ -167,7 +173,9 @@ def beginScherm():
     ''')
 
   
-
+    print()
+    print('Welcome to Hangman!\nYou have to guess letters till you have the entire word.\nBut make sure your lives dont run out!')
+    print()
 
     input('     Press enter to start')
   
