@@ -1,5 +1,5 @@
 appelbomen = 333
-schaduwBomen = appelbomen / 3 * 2
+schaduwBomen = (appelbomen / 3) * 2
 zonBomen = appelbomen - schaduwBomen
 
 print('Totale bomen: ' + str(appelbomen))
@@ -13,7 +13,8 @@ print('Schaduw appels: ' + str(schaduwAppels))
 print('Zon appels: ' + str(zonAppels) + '\n')
 
 totaleAppels = (zonBomen * zonAppels) + (schaduwBomen * schaduwAppels)
-persoonlijkeAppels = int(totaleAppels / 4)
+persoonlijkeAppels = totaleAppels % 4
+
 
 print('Totale appels: ' + str(totaleAppels))
 print('Persoonlijke appels: ' + str(persoonlijkeAppels) + '\n')
