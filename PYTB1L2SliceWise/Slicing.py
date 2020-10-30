@@ -20,5 +20,5 @@ print()
 
 tekst = 'Het www is ontwikkeld vanaf 1989 door Tim Berners-Lee'
 
-print(tekst[5:9])
-print(tekst[29:33])
+print(tekst[4:8])
+print(tekst[28:32])
