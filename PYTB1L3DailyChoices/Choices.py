@@ -4,25 +4,48 @@ butter = input("Wil je boter? (ja/nee)\n>>> ").lower()
 print()
 
 if (butter == "ja"):
-    butter = "met"
-elif (butter == "nee"):
-    butter = "met geen"
+    print('Je doet boter op je broodje')
 else:
-    butter = "zonder"
+    print('Je doet geen boter op je broodje')
 
-meat = input("Wat voor vlees wil je?\n>>> ").lower()
+
+meat = input("Wil je kip of gehakt?\n>>> ").lower()
 print()
 
-vegetable1 = input("Wat voor groente wil je?\n>>> ").lower()
+if (meat == "kip"):
+    print('Je doet kip op je broodje')
+else:
+    print('Je doet gehakt op je broodje')
+
+vegetable1 = input("Wil je sla op je broodje? (ja/nee)\n>>> ").lower()
 print()
 
-vegetable2 = input("Wat voor groente wil je nog meer?\n>>> ").lower()
+if (vegetable1 == "ja"):
+    print('Je doet sla op je broodje')
+else:
+    print('Je doet geen sla op je broodje')
+
+vegetable2 = input("Wil je tomaat op je broodje? (ja/nee)\n>>> ").lower()
 print()
 
-vegetable3 = input("Wat is de laatste groente die je wil?\n>>> ").lower()
+if (vegetable2 == "ja"):
+    print('Je doet tomaat op je broodje')
+else:
+    print('Je doet geen tomaat op je broodje')
+
+vegetable3 = input("Wil je ei op je broodje? (ja/nee)\n>>> ").lower()
 print()
 
-sauce = input("wat voor saus wil je?\n>>> ").lower()
+if (vegetable3 == "ja"):
+    print('Je doet een ei op je broodje')
+else:
+    print('Je doet geen ei op je broodje')
+
+sauce = input("Wil je mayonaise op je broodje? (ja/nee)\n>>> ").lower()
 print()
 
-print("Hier is je broodje " + butter + " boter en met " + meat + ", " + vegetable1 + ", " + vegetable2 + ", " + vegetable3 + " en " + sauce + "!")
+if (sauce == "ja"):
+    print('Je doet een beetje mayo op je broodje')
+else:
+    print('Je doet geen mayo op je broodje')
+
