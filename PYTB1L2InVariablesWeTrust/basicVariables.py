@@ -2,7 +2,7 @@ char1 = 'c'
 float1 = 6.9
 
 bool1 = True
-bool2 = False
+bool2 = bool1
 
 int1 = 5
 int2 = 420
